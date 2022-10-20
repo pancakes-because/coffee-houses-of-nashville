@@ -1,0 +1,70 @@
+/* 
+
+    The learning objective for this practice exercise is to use display:flex on a list component, 
+    and then add additional CSS properties to achieve a desired layout.
+
+*/ 
+
+
+
+/* "Coffee Houses of Nashville" heading*/ 
+
+/* I want to center the heading*/ 
+/* The header has a class of "pageHeader", so I can use the class to target this line and apply styling. */ 
+/* I used my chrome "inspect" tool, and it looks like the html is in display:block. */ 
+/* I can try using the display, margin, and width properties to center the heading. */ 
+/* I don't need display: block b/c this is the header's default alignment. I'll keep it anyway just to know. */
+/* I tested the amount of pixels needed for width; 180px seemed to be the lowest value needed. */ 
+/* I need space under the heading, so it doesn't touch the shop list items, so use the padding property */ 
+
+
+.pageHeader {
+    display: block; 
+    margin-right: auto; 
+    margin-left: auto; 
+    width: 180px; 
+
+    padding-bottom: 15px; 
+
+}
+
+/* This class targets the section tag that acts like a container for the shop names. */ 
+
+/* I need to use the display: flex property here. */ 
+/* This will help me order the shop names inside. */ 
+/* There needs to be around and between the shop names; use justify-content: space-evenly*/ 
+/* If my browser size is small, flex-wrap: wrap puts the shop names in the correct formation; think I'm on the right track. */ 
+
+.list {
+    display: flex;
+    justify-content: space-evenly; 
+    flex-wrap: wrap; 
+}
+
+/* This class targets the individual shop names */ 
+
+/* I added a border, so I can see how things are spaced more easily */ 
+/* I need to give the text space to breathe inside the border; use padding on all sides */ 
+/* I need the horizontal space inside of the border box to be wider; use the width property */ 
+/* It looks like the shop name text inside each border box is aligned on the left; use text-align: left */ 
+
+.shop {
+    border: 1px dotted #8A624A; /* #8A624A adds a coffee brown color */ 
+    padding-top: 4px; 
+    padding-bottom: 4px; 
+    padding-right: 4px; 
+    padding-left: 4px; 
+    width: 400px; /* could use the flex-basis property instead also */ /*may also need column gap too*/ 
+
+    text-align: left; 
+}
+
+/* 
+
+I think the key was adding flex-wrap: wrap to the section container, and then making the width bigger on 
+the shop name article tags. 
+
+However, it doesn't keep the order/formation formation if my browser size changes. Is there a
+way to keep the formation regardless of the browser size with the styling I have now, or no? 
+
+*/ 
